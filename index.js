@@ -1,8 +1,5 @@
-var express = require('express'),
-    app = express(),
-    mongoose = require('mongoose'),
+var mongoose = require('mongoose'),
     db = mongoose.connection;
-    latest = {};
 
 //Listen to some database connection events
 db.on('error', console.error);
@@ -23,35 +20,20 @@ var movieSchema = new mongoose.Schema({
 //Movie database object
 var Movie = mongoose.model('Movie', movieSchema);
 
-//Initialize the cache with a movie
-Movie.findOne({title:'Tremors'}, function(err, movie) {
-  if(err) {
-    return console.log('Error getting latest %j', err);
-  }
-
-  latest = movie;
+//Create a movie object
+var tremors = new Movie({
+  title: 'Tremors',
+  mpaa: 'PG-13',
+  release: '1990'
 });
 
-//Some Server configuration
-app.use(express.bodyParser());
-app.set('view engine', 'ejs');
+//Save and find the movie
+tremors.save(function(err, movie) {
+  if (err) return console.error(err);
+  console.log(movie);
 
-//Get latest movie
-app.get('/', function(req, res) {
-  res.render('index', latest);
-});
-
-//Save a movie, set it to the latest
-app.post('/', function(req, res) {
-  new Movie(req.body).save(function(err, movie) {
-    if(err) {
-      return res.send(err.message);
-    }
-
-    latest = movie;
-    res.send(movie.title + ' saved.');
+  Movie.find({title:'Tremors'}, function(err, movies) {
+    if (err) return console.error(err);
+    console.log(movies);
   });
 });
-
-//Start the app
-app.listen(2013);
