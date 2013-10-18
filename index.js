@@ -17,4 +17,4 @@ app.post('/', function(req, res) {
 });
 
 //Start the app
-app.listen(process.env.PORT || 2013);
+app.listen(2013);
