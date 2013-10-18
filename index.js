@@ -11,7 +11,7 @@ db.once('open', function() {
 });
 
 //Connect to the database
-mongoose.connect('mongodb://user:pass@mongo.onmodulus.net:27017/quZyby4w');
+mongoose.connect('mongodb://localhost/test');
 
 //Create the movie schema
 var movieSchema = new mongoose.Schema({
