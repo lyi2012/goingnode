@@ -1,7 +1,7 @@
 var express = require('express'),
     app = express(),
     mongoose = require('mongoose'),
-    db = mongoose.connection;
+    db = mongoose.connection,
     latest = {};
 
 //Listen to some database connection events
