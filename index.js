@@ -13,6 +13,10 @@ db.once('open', function() {
 //Connect to the database
 mongoose.connect('mongodb://localhost/test');
 
+//Some Server configuration
+app.use(express.bodyParser());
+app.set('view engine', 'ejs');
+
 //Create the movie schema
 var movieSchema = new mongoose.Schema({
   title: { type: String },
@@ -31,10 +35,6 @@ Movie.findOne({title:'Tremors'}, function(err, movie) {
 
   latest = movie;
 });
-
-//Some Server configuration
-app.use(express.bodyParser());
-app.set('view engine', 'ejs');
 
 //Get latest movie
 app.get('/', function(req, res) {
