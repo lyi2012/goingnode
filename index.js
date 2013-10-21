@@ -1,6 +1,6 @@
 var express = require('express'),
     app = express(),
-    text = '';
+    text = 'Hello World.';
 
 //Some Server configuration
 app.use(express.bodyParser());
