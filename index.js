@@ -7,4 +7,4 @@ http.createServer(function (req, res) {
   res.end('Hello World\n');
 }).listen(2013);
 
-console.log('Server running on port 2013.');
+console.log('Hello, server running on port 2013.');
