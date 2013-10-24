@@ -37,9 +37,7 @@ var
 	http = require("http"),
 	httpserv = http.createServer(handleHTTP),
 
-	port = 2013,
-	host = "127.0.0.1",
-
+	port = 2013
 	ASQ = require("asynquence"),
 	node_static = require("node-static"),
 	static_files = new node_static.Server(__dirname),
@@ -61,6 +59,6 @@ io.configure(function(){
 });
 
 
-httpserv.listen(port, host);
+httpserv.listen(port);
 
 io.on("connection",connection);
