@@ -1,7 +1,5 @@
 var express = require('express'),
     app = express(),
-    mongoose = require('mongoose'),
-    db = mongoose.connection;
     latest = {
       title: 'Tremors',
       mpaa: 'PG-13',
