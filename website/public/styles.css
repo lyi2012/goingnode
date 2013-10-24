@@ -10,9 +10,14 @@ body {
   background-color : #fff;
   min-height: 400px;
 }
-
+.logo{
+   background:transparent url(chatter-logo.png) no-repeat 0;
+   float:left;
+   width:120px;
+   height:100px;
+}
 h1 {
-  margin : 0 0 20px 0;
+  margin : 10px 0 20px 0;
   color : #4183c4;
   text-align : center;
   text-transform : uppercase;
@@ -23,33 +28,35 @@ h1 {
   font-family : Arial, sans-serif;
   line-height : 1em;
   filter: dropshadow(color=#6B6B6B, offx=1, offy=1);
+  float:right;
 }
-
+.clear{
+   clear:both;
+   float:none;
+}
 textarea{
    resize:vertical;
    min-height:72px;
    max-height:150px;
 }
-.content h1{
+h2{
    color:#2b2b2b;
    text-align:left;
    text-transform:none;
    text-shadow:none;
    letter-spacing:0;
    line-height:0;
-   margin: 100px 0 80px 30px;
+   margin: 80px 0 50px 30px;
 }
-#messages {
-  overflow : auto;
-  height : 300px;
-}
+
 
 .login{
    width: 275px;
-   margin: 80px 0 10px 50px;
+   margin: 50px 0 10px 50px;
    border: 1px solid #ccc;
    padding: 15px;
    background-color: ghostwhite;
+   border-radius: 10px;
 }
 
 fieldset {
@@ -77,9 +84,10 @@ width: auto;
 .msg.old {
   color : #C7C7C7;
 }
-
-.nic {
-  margin : 10px 0;
+footer {
+   font-size: 12px;
+   color: #ccc;
+   margin-top: 50px;
 }
 
 #message {
