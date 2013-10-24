@@ -1,0 +1,2 @@
+mongodb://root:<nodeday@mongo.onmodulus.net:27017/tyt9Iwas
+mongo mongo.onmodulus.net:27017/tyt9Iwas -u root -p nodeday
